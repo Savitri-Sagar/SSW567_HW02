@@ -19,17 +19,6 @@ from Triangle import classifyTriangle
 class TestTriangles(unittest.TestCase):
     # define multiple sets of tests as functions with names that begin
 
-    def testIsoscelesRightTriangleA(self):
-        """Isosceles Right. Test all integer inputs in a, b, c order where a and b are legs and c is the hypotensue."""
-        self.assertEqual(classifyTriangle(1, 1, 2**0.5),'Isosceles Right','1, 1, 2**0.5 is an Isosceles Right triangle')
-    def testIsoscelesRightTriangleB(self):
-        """Isosceles Right. Test all integer inputs in a, c, b order where a and b are legs and c is the hypotensue."""
-        self.assertEqual(classifyTriangle(1, 2**0.5, 1),'Isosceles Right','1, 2**0.5, 1 is an Isosceles Right triangle')
-    def testIsoscelesRightTriangleC(self):
-        """Isosceles Right. Test all integer inputs in c, a, b (also c, b, a) order where a and b are legs and c is the hypotensue."""
-        self.assertEqual(classifyTriangle(2**0.5, 1, 1),'Isosceles Right','2**0.5, 1, 1 is an Isosceles Right triangle')
-
-
     def testScaleneRightTriangleA(self): 
         """Scalene Right. Test all integer inputs in a, b, c order where a and b are legs and c is the hypotensue."""
         self.assertEqual(classifyTriangle(3, 4, 5),'Scalene Right','3, 4, 5 is a Scalene Right triangle')
@@ -58,13 +47,13 @@ class TestTriangles(unittest.TestCase):
     # Test triangles that can only be classified as isosceles.
     def testIsoscelesTriangleA(self):
         """Strictly isosceles. Test side order A"""
-        self.assertEqual(classifyTriangle(10, 10, 25), 'Isosceles', '10, 10, 25 should be an Isosceles triangle')
-    def testIsoscelesTriangleB(self): #new
+        self.assertEqual(classifyTriangle(20, 20, 25), 'Isosceles', '20, 20, 25 should be an Isosceles triangle')
+    def testIsoscelesTriangleB(self):
         """Strictly isosceles. Test side order B."""
-        self.assertEqual(classifyTriangle(10, 25, 10), 'Isosceles', '10, 25, 10 should be an Isosceles triangle')
-    def testIsoscelesTriangleC(self): #new
+        self.assertEqual(classifyTriangle(20, 25, 20), 'Isosceles', '20, 25, 20 should be an Isosceles triangle')
+    def testIsoscelesTriangleC(self):
         """Strictly isosceles. Test side order C."""
-        self.assertEqual(classifyTriangle(25, 10, 10), 'Isosceles', '25, 10, 10 should be an Isosceles triangle')
+        self.assertEqual(classifyTriangle(25, 20, 20), 'Isosceles', '25, 20, 20 should be an Isosceles triangle')
         
         
     def testScaleneTriangleA(self):

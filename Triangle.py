@@ -46,11 +46,18 @@ def classifyTriangle(a,b,c):
         return 'NotATriangle'
     
     # now we know that we have a valid triangle
+    # Add this to ensure we can use the Pythag Theorem to check for right Triangles
+    orig_a = a
+    orig_b = b
+    orig_c = c
+    sides_list = [orig_a, orig_b, orig_c]
+    c = max(orig_a, orig_b, orig_c)
+    sides_list.remove(c)
+    a = sides_list[0]
+    b = sides_list[1]
     if a == b and b == c:
         return 'Equilateral'
-    elif (((a * 2) + (b * 2)) == (c * 2)) and ((a == b) or (a==c) or (b==c)):
-        return 'Isosceles Right'
-    elif (((a * 2) + (b * 2)) == (c * 2)) and ((a!=b) and (b!=c) and (a!=c)):
+    elif (((a ** 2) + (b ** 2)) == (c ** 2)) and ((a!=b) and (b!=c) and (a!=c)):
         return 'Scalene Right'
     elif (a != b) and  (b != c) and (a != c):
         return 'Scalene'
