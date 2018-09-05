@@ -121,6 +121,17 @@ class TestTriangles(unittest.TestCase):
     def testInvalInputH(self):
         """Test inputs that do not satisfy the bounds placed on the inputs. Combination of invalid inputs > 200 and <= 0 and one valid input."""
         self.assertEqual(classifyTriangle(-4, 17, 201), "InvalidInput", "-4 and 201 are invalid inputs")
+        
+    # Test decimal inputs to ensure the isInstance() check is working to ensure integer inputs
+    def testDecimalInputsA(self):
+        """Test decimal input to ensure the isInstance() check is working to ensure integer inputs. One decimal input."""
+        self.assertEqual(classifyTriangle(20.5, 30, 40), "InvalidInput", "20.5 is an invalid input")
+    def testDecimalInputsB(self):
+        """Test decimal input to ensure the isInstance() check is working to ensure integer inputs. Two decimal inputs."""
+        self.assertEqual(classifyTriangle(20.5, 20.5, 40), "InvalidInput", "20.5 and 20.5 are invalid inputs")
+    def testDecimalInputsC(self):
+        """Test decimal input to ensure the isInstance() check is working to ensure integer inputs. Three decimal inputs."""
+        self.assertEqual(classifyTriangle(20.5, 20.5, 20.5), "InvalidInput", "20.5, 20.5, 20.5 are invalid inputs")
 
 if __name__ == '__main__':
     print('Running unit tests')
