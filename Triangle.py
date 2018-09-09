@@ -63,3 +63,7 @@ def classifyTriangle(a,b,c):
         return 'Scalene'
     else:
         return 'Isosceles'
+    
+# I pledge on my honor that I have not given or received any unauthorized assistance on this assignment/examination.
+# I further pledge that I have not copied any material from a book, article, the Internet or any other source except where I have expressly cited the source.
+# Kristen Tan
